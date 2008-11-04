@@ -8,4 +8,4 @@
 XTerm*font:-*-fixed-medium-*-*-*-18-*-*-*-*-*-iso8859-*
 
 ! Emacs covers emacs, emacs21 and others
-Emacs.font:monospace-8
+Emacs.font:Envy Code R-8.5
