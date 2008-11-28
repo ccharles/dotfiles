@@ -94,7 +94,7 @@
  '(whitespace-space ((((class color) (background dark)) (:foreground "#122"))))
  '(whitespace-tab ((nil (:foreground "#122")))))
 
-(windmove-default-keybindings)
+(windmove-default-keybindings 'control)
 
 (require 'tramp)
 (add-to-list 'tramp-default-proxies-alist
