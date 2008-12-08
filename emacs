@@ -137,8 +137,7 @@
   (setq window-columns 77)
   (autoload 'color-theme-clarity "color-theme" t)
   (color-theme-clarity)
-  (setq initial-frame-alist '((width . 80) (height . 26)))
-  (mouse-avoidance-mode 'banish))
+  (setq initial-frame-alist '((width . 80) (height . 26))))
 
 ;; ; SLIME
 ;; (setq inferior-lisp-program "/usr/bin/clisp")
