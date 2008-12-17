@@ -79,21 +79,6 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(erc-prompt-face ((t (:foreground "lightBlue2" :weight bold))))
- '(highlight-current-line-face ((t (:background "#090909"))))
- '(mode-line ((t (:background "darkslateblue" :foreground "yellow" :box (:line-width -1 :style released-button)))))
- '(region ((t (:background "gray20"))))
- '(show-paren-match ((t (:background "#363"))))
- '(show-paren-mismatch ((((class color)) (:background "#633"))))
- '(whitespace-newline ((t (:foreground "#122"))))
- '(whitespace-space ((((class color) (background dark)) (:foreground "#122"))))
- '(whitespace-tab ((nil (:foreground "#122")))))
-
 (windmove-default-keybindings 'control)
 
 (require 'tramp)
@@ -159,10 +144,8 @@
 	 (setq yas/trigger-key [C-tab])))
 
 (gnuserv-start)
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(global-whitespace-mode t)
- '(whitespace-style (quote (tabs spaces trailing space-before-tab newline indentation space-after-tab space-mark tab-mark newline-mark))))
+
+; Thanks to M-x all-things-emacs
+; http://www.emacsblog.org/2008/12/06/quick-tip-detaching-the-custom-file/
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
