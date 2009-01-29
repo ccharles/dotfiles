@@ -149,3 +149,6 @@
 ; http://www.emacsblog.org/2008/12/06/quick-tip-detaching-the-custom-file/
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
+
+; http://benno.id.au/blog/2008/02/26/emacs-backup-files
+(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
