@@ -152,3 +152,10 @@
 
 ; http://benno.id.au/blog/2008/02/26/emacs-backup-files
 (setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
+
+; Prevent M-x shell from clobbering windmove bindings
+(eval-after-load "shell" '(define-key shell-mode-map (kbd "<C-up>") nil))
+(eval-after-load "shell" '(define-key shell-mode-map (kbd "<C-down>") nil))
+
+; Make M-x shell work with ANSI colours
+(eval-after-load "shell" '(ansi-color-for-comint-mode-on))
