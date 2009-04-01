@@ -133,6 +133,8 @@
 
 (put 'set-goal-column 'disabled nil)
 (global-set-key "\C-ca" 'org-agenda)
+(eval-after-load "org"
+  '(setq org-log-done 'time))
 
 (put 'narrow-to-region 'disabled nil)
 
