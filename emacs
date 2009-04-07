@@ -163,3 +163,8 @@
 
 ; Make M-x shell work with ANSI colours
 (eval-after-load "shell" '(ansi-color-for-comint-mode-on))
+
+; Load local modifications
+(defvar local-init "~/.emacs.d/init-local.el")
+(if (file-readable-p local-init)
+	(load-file local-init))
