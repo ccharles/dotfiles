@@ -23,7 +23,6 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (show-paren-mode)
-(highlight-current-line-on t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq indent-tabs-mode nil)
 
