@@ -27,7 +27,7 @@
 (setq indent-tabs-mode nil)
 
 ;; X11 Emacs settings
-(if (window-system)
+(if window-system
     (progn
       (scroll-bar-mode nil)
       (setq window-columns 77)
