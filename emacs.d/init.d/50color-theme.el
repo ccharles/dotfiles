@@ -35,4 +35,10 @@
            (set-face-background 'whitespace-tab nil)
            (set-face-foreground 'whitespace-tab "grey30")
            (set-face-background 'whitespace-indentation nil)
-           (set-face-foreground 'whitespace-indentation "grey30")))))
+           (set-face-foreground 'whitespace-indentation "grey30")))
+
+      ; Make ERC prompt readable
+      (eval-after-load "erc"
+        '(progn
+           (set-face-background 'erc-prompt-face nil)
+           (set-face-foreground 'erc-prompt-face "lightBlue2")))))
