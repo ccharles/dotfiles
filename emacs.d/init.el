@@ -31,7 +31,8 @@
     (progn
       (scroll-bar-mode nil)
       (setq window-columns 77)
-      (setq initial-frame-alist '((width . 80) (height . 26)))))
+      (setq initial-frame-alist '((width . 80) (height . 26)))
+      (add-to-list 'default-frame-alist '(font . "Envy Code R-10"))))
 
 ; Copied from http://wiki.asleep.net/wiki/My_Dot_Emacs
 ;; Make executable scripts +x on save
