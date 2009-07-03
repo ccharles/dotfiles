@@ -13,6 +13,10 @@
     (progn
       (color-theme-wombat)
 
+      ; Make hidden asterisks in org-mode truly hidden
+      (eval-after-load "org"
+        '(set-face-foreground 'org-hide "#242424"))
+
       ; Make highlight-current-line-face look OK with wombat
       (eval-after-load "highlight-current-line"
         '(set-face-background 'highlight-current-line-face "grey10"))

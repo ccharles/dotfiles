@@ -9,8 +9,10 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(global-set-key "\C-ca" 'org-agenda)
 (eval-after-load "org"
-  '(setq org-log-done 'time))
-(eval-after-load "org"
-  '(setq org-agenda-restore-windows-after-quit t))
+  '(progn
+     (global-set-key "\C-ca" 'org-agenda)
+     (setq org-log-done 'time)
+     (setq org-agenda-restore-windows-after-quit t)
+     (setq org-hide-leading-stars t)
+     (setq org-odd-levels-only t)))
