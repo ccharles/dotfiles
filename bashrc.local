@@ -36,7 +36,7 @@ awesome_prompt() {
     fi
     local SVN_STATUS=$(__svn_ps1)
 
-    PS1="\[\e[94m\]\u\[\e[0m\] \[\e[92m\]\[\e[92m\]\h \[\e[93m\]\w\[\e[90m\]"
+    PS1="\[\e[94m\]\u\[\e[0m\] \[\e[92m\]\h \[\e[93m\]\w\[\e[90m\]"
     PS2="\[\e[90m\]... \[\e[0m\]"
 
     if [ "$GIT_BRANCH" != '' ]; then
