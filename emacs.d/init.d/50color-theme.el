@@ -13,6 +13,9 @@
     (progn
       (color-theme-wombat)
 
+	  (set-face-background 'show-paren-match "steelblue4")
+	  (set-face-background 'show-paren-mismatch "purple3")
+
       ; Make hidden asterisks in org-mode truly hidden
       (eval-after-load "org"
         '(set-face-foreground 'org-hide "#242424"))
