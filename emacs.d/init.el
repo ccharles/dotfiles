@@ -57,6 +57,9 @@
 ;; Local lisp files live here
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
+;; Tabs are evil
+(setq-default indent-tabs-mode nil)
+
 ;; Load external config files
 (let ((init-folder "~/.emacs.d/init.d"))
   (if (file-readable-p init-folder)
