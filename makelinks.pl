@@ -26,8 +26,10 @@ use Getopt::Long;
 my $exit_value = 0;
 my $base_dir = "$FindBin::Bin";
 my $ignore_file = '.ignore';
+my $do_delete = 0;
 
-GetOptions('ignore-file=s' => \$ignore_file);
+GetOptions('ignore-file=s' => \$ignore_file,
+           'delete'        => \$do_delete);
 
 my @files;  # Array of relative files and directories
 my %links;  # Hash of absolute links -> targets
@@ -70,17 +72,35 @@ sub wanted {
             File::Spec->catfile($base_dir, $_);
 } @files;
 
-foreach my $link (sort keys %links) {
-    my $target = $links{$link};
-    my $link_dir = dirname($link);
+if ($do_delete) {
+    foreach my $link (sort keys %links) {
+        my $target = $links{$link};
 
-    unless (-e $link_dir) {
-        if (mkpath($link_dir)) {
-            print "mkdir $link_dir\n";
+        if (-l $link) {
+            if (readlink($link) eq $target) {
+                if (unlink $link) {
+                    print "rm $link\n";
+                }
+            }
+            else {
+                print "$link does not point to $target\n";
+            }
         }
     }
-    if (symlink $target, $link) {
-        print "ln -s $target $link\n";
+}
+else {
+    foreach my $link (sort keys %links) {
+        my $target = $links{$link};
+        my $link_dir = dirname($link);
+
+        unless (-e $link_dir) {
+            if (mkpath($link_dir)) {
+                print "mkdir $link_dir\n";
+            }
+        }
+        if (symlink $target, $link) {
+            print "ln -s $target $link\n";
+        }
     }
 }
 
