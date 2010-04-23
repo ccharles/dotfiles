@@ -7,7 +7,13 @@ alias ls="ls --color=auto"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Use Emacs
-export EDITOR=gnuclient
+if which gnuclient 2>/dev/null 1>&2; then
+    export EDITOR=gnuclient
+elif which emacsclient 2>/dev/null 1>&2; then
+    export EDITOR=emacsclient
+else
+    export EDITOR=vi
+fi
 
 # Enable completion
 autoload -U compinit && compinit
