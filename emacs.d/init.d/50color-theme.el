@@ -9,22 +9,15 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(if (require 'color-theme-wombat nil t)
+(if (locate-library "color-theme-wombat")
     (progn
       (color-theme-wombat)
 
-	  (set-face-background 'show-paren-match "steelblue4")
-	  (set-face-background 'show-paren-mismatch "purple3")
-
-      ; Make hidden asterisks in org-mode truly hidden
-      (eval-after-load "org"
-        '(set-face-foreground 'org-hide "#242424"))
-
       ; Make highlight-current-line-face look OK with wombat
-      (eval-after-load "highlight-current-line"
-        '(set-face-background 'highlight-current-line-face "grey10"))
+      ;; (eval-after-load "highlight-current-line"
+      ;;   '(set-face-background 'highlight-current-line-face "grey10"))
 
-      ; Make cperl hashes and array slook OK with wombat
+      ; Make cperl hashes and arrays look OK with wombat
       (eval-after-load "cperl-mode"
         '(progn
            (set-face-background 'cperl-array-face nil)
@@ -42,10 +35,10 @@
            (set-face-background 'whitespace-tab nil)
            (set-face-foreground 'whitespace-tab "grey30")
            (set-face-background 'whitespace-indentation nil)
-           (set-face-foreground 'whitespace-indentation "grey30")))
+           (set-face-foreground 'whitespace-indentation "grey30")))))
 
       ; Make ERC prompt readable
-      (eval-after-load "erc"
-        '(progn
-           (set-face-background 'erc-prompt-face nil)
-           (set-face-foreground 'erc-prompt-face "lightBlue2")))))
+      ;; (eval-after-load "erc"
+      ;;   '(progn
+      ;;      (set-face-background 'erc-prompt-face nil)
+      ;;      (set-face-foreground 'erc-prompt-face "lightBlue2")))))
