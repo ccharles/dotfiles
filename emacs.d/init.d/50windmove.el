@@ -10,4 +10,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (if (require 'windmove)
-    (windmove-default-keybindings 'control))
+    (progn
+      (global-set-key [left] 'windmove-left)
+      (global-set-key [right] 'windmove-right)
+      (global-set-key [up] 'windmove-up)
+      (global-set-key [down] 'windmove-down)))
