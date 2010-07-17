@@ -9,7 +9,7 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(if (locate-library "color-theme-wombat")
+(if (require 'color-theme-wombat nil t)
     (progn
       (color-theme-wombat)
 
