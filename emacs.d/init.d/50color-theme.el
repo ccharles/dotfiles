@@ -13,9 +13,9 @@
     (progn
       (color-theme-wombat)
 
-      ; Make highlight-current-line-face look OK with wombat
-      ;; (eval-after-load "highlight-current-line"
-      ;;   '(set-face-background 'highlight-current-line-face "grey10"))
+      ; Make hl-line-mode look OK with wombat
+      (eval-after-load "hl-line"
+        '(set-face-background 'hl-line "grey10"))
 
       ; Make cperl hashes and arrays look OK with wombat
       (eval-after-load "cperl-mode"

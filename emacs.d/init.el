@@ -77,6 +77,10 @@
 ;; Tabs are evil
 (setq-default indent-tabs-mode nil)
 
+;; Enable current line highlighting
+(if (fboundp 'global-hl-line-mode)
+    (global-hl-line-mode))
+
 ;; Load external config files
 (let ((init-folder "~/.emacs.d/init.d"))
   (if (file-readable-p init-folder)
