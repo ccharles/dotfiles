@@ -16,3 +16,7 @@
 
 [color]
 	diff = true
+[web]
+	browser = chromium
+[browser "chromium"]
+	cmd = /usr/bin/chromium
