@@ -32,7 +32,24 @@
       (scroll-bar-mode nil)
       (setq window-columns 77)
       (setq initial-frame-alist '((width . 80) (height . 26)))
-      (add-to-list 'default-frame-alist '(font . "Envy Code R-10"))))
+
+      ;; Set the font based on which fonts are available
+      (let ((preferred-fonts-list
+             (list "-lispm-fixed-medium-r-normal-*-13-*-*-*-*-*-*-*"
+                   "Envy Code R-10")))
+
+		(defun my-set-font (font-list)
+		  "Set the font on the current frame to the first font found"
+
+		  ;; set-default-font is deprecated as of Emacs 23.1, but should work
+		  ;; in earlier versions
+          (if (x-list-fonts (car font-list))
+			  (if (fboundp 'set-frame-font)
+				  (set-frame-font (car font-list))
+				(set-default-font (car font-listfont-name)))
+			(my-set-font (cdr font-list))))
+
+		(my-set-font preferred-fonts-list))))
 
 ; Copied from http://wiki.asleep.net/wiki/My_Dot_Emacs
 ;; Make executable scripts +x on save
