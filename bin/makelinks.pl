@@ -24,7 +24,7 @@ use FindBin;
 use Getopt::Long;
 
 my $exit_value = 0;
-my $base_dir = "$FindBin::Bin";
+my $base_dir = Cwd::realpath("$FindBin::Bin/..");
 my $ignore_file = '.ignore';
 my $do_delete = 0;
 

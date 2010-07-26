@@ -1,4 +1,4 @@
 # Perl-compatible regular expressions of files to ignore when making links.
 ^.git/.*
-^makelinks.(?:sh|pl)$
+^bin/.*
 ^README$
