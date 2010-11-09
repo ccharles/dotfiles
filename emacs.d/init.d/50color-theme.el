@@ -13,6 +13,12 @@
     (progn
       (color-theme-wombat)
 
+      ; Linum mode should blend in better
+      (eval-after-load "linum"
+        '(progn
+           (set-face-background 'linum "grey10")
+           (set-face-foreground 'linum "grey25")))
+
       ; Make hl-line-mode look OK with wombat
       (eval-after-load "hl-line"
         '(set-face-background 'hl-line "grey10"))
