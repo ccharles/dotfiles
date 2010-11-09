@@ -81,6 +81,28 @@
 (if (fboundp 'global-hl-line-mode)
     (global-hl-line-mode))
 
+;; Cycle the frame size
+(defun my-cycle-frame-sizes ()
+  (interactive)
+
+  (defun set-frame-size-by-list (size)
+    (set-frame-size (selected-frame)
+                    (pop size)
+                    (pop size)))
+
+  (let ((my-frame-sizes (list (list 80 26)
+                              (list 80 52)
+                              ;; Workaround for now
+                              (list 80 26))))
+
+    (if (member (list (frame-width) (frame-height)) my-frame-sizes)
+        (set-frame-size-by-list
+         (elt (member (list (frame-width)
+                            (frame-height)) my-frame-sizes) 1))
+
+      ;; If we're not on a preset size, default to the first entry
+      (set-frame-size-by-list (car my-frame-sizes)))))
+
 ;; Load external config files
 (let ((init-folder "~/.emacs.d/init.d"))
   (if (file-readable-p init-folder)
