@@ -31,7 +31,7 @@
     (progn
       (scroll-bar-mode nil)
       (setq window-columns 77)
-      (setq initial-frame-alist '((width . 80) (height . 26)))
+      (setq initial-frame-alist '((width . 90) (height . 52)))
 
       ;; Set the font based on which fonts are available
       (let ((preferred-fonts-list
@@ -90,10 +90,10 @@
                     (pop size)
                     (pop size)))
 
-  (let ((my-frame-sizes (list (list 80 26)
-                              (list 80 52)
+  (let ((my-frame-sizes (list (list 90 26)
+                              (list 90 52)
                               ;; Workaround for now
-                              (list 80 26))))
+                              (list 90 26))))
 
     (if (member (list (frame-width) (frame-height)) my-frame-sizes)
         (set-frame-size-by-list
