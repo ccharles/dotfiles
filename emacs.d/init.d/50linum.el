@@ -12,5 +12,5 @@
 (eval-after-load "linum"
   (setq linum-format "%5d"))
 
-(if (require 'linum nil t)
-    (global-linum-mode))
+;; (if (require 'linum nil t)
+;;     (global-linum-mode))
