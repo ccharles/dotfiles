@@ -11,7 +11,7 @@
 #############################################################################
 
 # Use gnuclient.
-export EDITOR=gnuclient
+export EDITOR=emacsclient
 
 # Function to read the current Subversion revision.
 #
