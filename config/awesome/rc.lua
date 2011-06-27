@@ -352,3 +352,10 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+
+function reset_layout()
+   awful.tag.setmwfact(0.5)
+   awful.tag.setnmaster(1)
+   awful.tag.setncol(1)
+end
