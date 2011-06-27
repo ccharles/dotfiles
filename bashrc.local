@@ -12,6 +12,7 @@
 
 # Use gnuclient.
 export EDITOR=emacsclient
+export BROWSER=chromium
 
 # Function to read the current Subversion revision.
 #
