@@ -10,6 +10,9 @@ require("naughty")
 -- Enable awesome-client
 require("awful.remote")
 
+-- Enable dynamic tiling
+require("eminent")
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/home/chris/.config/awesome/theme.lua")
