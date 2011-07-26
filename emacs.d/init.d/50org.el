@@ -9,6 +9,9 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Enable newer Org-mode from AUR
+(require 'org-install nil t)
+
 (eval-after-load "org"
   '(progn
      (global-set-key "\C-ca" 'org-agenda)
