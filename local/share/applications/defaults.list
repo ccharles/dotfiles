@@ -1,3 +1,6 @@
 [Default Applications]
-text/html=chromium.desktop
+application/msword=libreoffice-startcenter.desktop
 application/pdf=kde4/okular.desktop
+application/x-bittorrent=kde4/ktorrent.desktop
+application/x-directory=kde4/dolphin.desktop
+text/html=chromium.desktop
