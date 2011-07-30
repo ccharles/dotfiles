@@ -34,9 +34,11 @@
       (setq initial-frame-alist '((width . 90) (height . 52)))
 
       ;; Set the font based on which fonts are available
-      (let ((preferred-fonts-list
-             (list "-lispm-fixed-medium-r-normal-*-13-*-*-*-*-*-*-*"
-                   "Envy Code R-10")))
+      (let ((preferred-fonts-list (list)))
+
+            (add-to-list 'preferred-fonts-list
+                         "-lispm-fixed-medium-r-normal-*-13-*-*-*-*-*-*-*")
+            (add-to-list 'preferred-fonts-list "Envy Code R-10")
 
 		(defun my-set-font (font-list)
 		  "Set the font on the current frame to the first font found"
