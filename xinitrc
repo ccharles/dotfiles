@@ -8,6 +8,7 @@ then
     xcompmgr &
     /home/chris/bin/xorg.sh &
     dropboxd &
+    sparkleshare start &
     ssh-agent ck-launch-session awesome
 elif [[ "$1" == "gnome" ]]
 then
