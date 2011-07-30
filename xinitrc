@@ -3,7 +3,6 @@
 if [[ "$1" == "awesome" ]]
 then
     gnome-keyring-daemon &
-    nm-applet --sm-disable &
     parcellite &
     batti &
     xcompmgr &

@@ -362,3 +362,8 @@ function reset_layout()
    awful.tag.setnmaster(1)
    awful.tag.setncol(1)
 end
+
+
+-- Run the NetworkManager applet. I can't get it to work with ConsoleKit
+-- using .xinitrc.
+awful.util.spawn('nm-applet --sm-disable')
