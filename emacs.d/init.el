@@ -46,9 +46,7 @@
 		  ;; set-default-font is deprecated as of Emacs 23.1, but should work
 		  ;; in earlier versions
           (if (x-list-fonts (car font-list))
-			  (if (fboundp 'set-frame-font)
-				  (set-frame-font (car font-list))
-				(set-default-font (car font-listfont-name)))
+              (set-face-attribute 'default nil :font (car font-list))
 			(my-set-font (cdr font-list))))
 
 		(my-set-font preferred-fonts-list))))
