@@ -18,5 +18,7 @@
      (setq org-log-done 'time)
      (setq org-clock-out-remove-zero-time-clocks t)
      (setq org-agenda-restore-windows-after-quit t)
+     (setq org-agenda-clockreport-parameter-plist
+           '(:link t :maxlevel 5 :compact t))
      (setq org-hide-leading-stars t)
      (setq org-odd-levels-only t)))
