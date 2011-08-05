@@ -1,0 +1,4 @@
+# Base our file off the system-wide configuration file
+include "%L"
+
+<Multi_key> <l> <o> <d> : "ಠ_ಠ"  # Look of disapproval is very important
