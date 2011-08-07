@@ -15,5 +15,8 @@
       (require 'autopair nil t)
       (autopair-global-mode 1)
 
+      ;; Don't want autopair in js2-mode
+      (add-hook 'js2-mode-hook '(lambda () (setq autopair-dont-activate t)))
+
       ;; Enable wrapping of selected text
       (setq autopair-autowrap t)))
