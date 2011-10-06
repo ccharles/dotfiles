@@ -9,5 +9,5 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(if (require 'sql nil t)
-    (setq sql-sqlite-program "sqlite3"))
+(eval-after-load "sql"
+  '(setq sql-sqlite-program "sqlite3"))

@@ -11,6 +11,7 @@
 
 ; Git should be the preferred VC backend (particularly it should be preferred
 ; over CVS)
-(if (require 'vc nil t)
-	(set 'vc-handled-backends
-		 '(Git RCS CVS SVN SCCS Bzr Hg Mtn Arch)))
+(if (locate-library "vc")
+	(eval-after-load "vc"
+      (set 'vc-handled-backends
+           '(Git RCS CVS SVN SCCS Bzr Hg Mtn Arch))))

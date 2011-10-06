@@ -9,6 +9,9 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(if (require 'slime nil t)
-	(progn (slime-setup)
-		   (setq inferior-lisp-program "/usr/bin/clisp")))
+(if (locate-library "slime")
+    (autoload 'slime "slime" nil t))
+
+(eval-after-load "slime"
+  '(progn (slime-setup)
+          (setq inferior-lisp-program "/usr/bin/clisp")))
