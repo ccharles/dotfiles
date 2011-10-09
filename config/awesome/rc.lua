@@ -354,6 +354,10 @@ end)
 
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- Start floating clients under the cursor
+-- https://awesome.naquadah.org/wiki/FAQ#How_do_I_make_windows_spawn_under_my_mouse_cursor
+client.add_signal("manage", function (c, startup) awful.placement.under_mouse(c) end)
 -- }}}
 
 
