@@ -110,6 +110,9 @@
                            (let ((buffer-file-name (or buffer-file-name (buffer-name))))
                              (set-auto-mode))))
 
+;; Single spaces are fine between sentences
+(setq sentence-end-double-space nil)
+
 ;; Load external config files
 (let ((init-folder "~/.emacs.d/init.d"))
   (if (file-readable-p init-folder)
