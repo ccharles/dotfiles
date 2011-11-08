@@ -103,6 +103,13 @@
       ;; If we're not on a preset size, default to the first entry
       (set-frame-size-by-list (car my-frame-sizes)))))
 
+;; From http://www.reddit.com/r/emacs/comments/d2t4q/scratch_buffers_for_emacs/c0x7a68
+;;
+;; Automatically select the appropriate major mode for buffers
+(setq default-major-mode (lambda ()
+                           (let ((buffer-file-name (or buffer-file-name (buffer-name))))
+                             (set-auto-mode))))
+
 ;; Load external config files
 (let ((init-folder "~/.emacs.d/init.d"))
   (if (file-readable-p init-folder)
