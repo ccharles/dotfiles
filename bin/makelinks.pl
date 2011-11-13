@@ -23,13 +23,18 @@ use File::Spec;
 use FindBin;
 use Getopt::Long;
 
+use Term::ANSIColor qw(:constants);
+
+
 my $exit_value = 0;
 my $base_dir = Cwd::realpath("$FindBin::Bin/..");
 my $ignore_file = '.ignore';
 my $do_delete = 0;
+my $find_broken = 1;
 
 GetOptions('ignore-file=s' => \$ignore_file,
-           'delete'        => \$do_delete);
+           'delete'        => \$do_delete,
+           'find-broken'   => \$find_broken);
 
 my @files;  # Array of relative files and directories
 my %links;  # Hash of absolute links -> targets
@@ -102,6 +107,21 @@ else {
             print "ln -s $target $link\n";
         }
     }
+}
+
+if ($find_broken) {
+    find(sub {
+             my $file = $File::Find::name;
+             if (-l $file) {
+                 my $target = readlink($file);
+                 if ($target =~ /$base_dir/) {
+                     if (not -e $target) {
+                         print STDERR RED, "Broken link: $file ($target)\n", RESET;
+                     }
+                 }
+             }
+         },
+         $ENV{'HOME'});
 }
 
 exit $exit_value;
