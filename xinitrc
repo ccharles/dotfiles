@@ -9,6 +9,7 @@ then
     /home/chris/.scripts/xorg.sh &
     dropboxd &
     sparkleshare start &
+    kmix &
     ssh-agent ck-launch-session "$1"
 elif [[ "$1" == "gnome" ]]
 then
