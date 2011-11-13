@@ -41,7 +41,7 @@ my %links;  # Hash of absolute links -> targets
 my @ignore = ("^$ignore_file\$", '^\.$');
 
 # Read the .ignore file
-if (-e "$ignore_file") {
+if (-e File::Spec->catfile($base_dir, "$ignore_file")) {
     open(IGNORE, File::Spec->catfile($base_dir, $ignore_file));
     while (<IGNORE>) {
         # Ignore comments in the config file
