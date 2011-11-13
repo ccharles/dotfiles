@@ -6,7 +6,7 @@ then
     parcellite &
     batti &
     xcompmgr &
-    /home/chris/bin/xorg.sh &
+    /home/chris/.scripts/xorg.sh &
     dropboxd &
     sparkleshare start &
     ssh-agent ck-launch-session awesome
