@@ -149,5 +149,8 @@ for_window [class="Keepassx"] floating enable
 for_window [class="Kopate"] floating enable
 for_window [class="Skype"] floating enable
 
+# Lock the screen
+bindsym $mod+l exec xlock -mode blank
+
 # Start nm-applet to get appropriate permissions
 exec nm-applet
