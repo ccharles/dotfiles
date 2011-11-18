@@ -30,6 +30,7 @@ then
     dropboxd &
     sparkleshare start &
     kmix &
+    $HOME/.scripts/background.sh &
     ssh-agent ck-launch-session "$DESKTOP"
 elif [[ "$DESKTOP" == "gnome" ]]
 then
