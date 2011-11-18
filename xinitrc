@@ -26,7 +26,7 @@ then
     parcellite &
     batti &
     xcompmgr &
-    /home/chris/.scripts/xorg.sh &
+    $HOME/.scripts/xorg.sh &
     dropboxd &
     sparkleshare start &
     kmix &
