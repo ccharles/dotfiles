@@ -1,0 +1,32 @@
+# For piping into i3bar
+out_to_x no
+out_to_console yes
+
+# If we do output to X, though, make it a dock window
+# own_window yes
+# own_window_type dock
+
+if_up_strictness link
+
+
+TEXT
+$nodename | \
+$machine $kernel | \
+$uptime | \
+/ ${fs_free /} | \
+${if_mounted /home}/home ${fs_free /home} | ${endif}\
+${if_mounted /boot}/boot ${fs_free /boot} | ${endif}\
+${if_up eth0}e0: ${addr eth0} | ${endif}\
+${if_up eth1}e1: ${addr eth1} | ${endif}\
+${if_up eth2}e2: ${addr eth2} | ${endif}\
+${if_up eth3}e3: ${addr eth3} | ${endif}\
+${if_up wlan0}w0: ${addr wlan0} (${wireless_link_qual_perc wlan0}% ${wireless_essid wlan0}) | ${endif}\
+${if_up wlan1}w1: ${addr wlan1} (${wireless_link_qual_perc wlan1}% ${wireless_essid wlan1}) | ${endif}\
+${if_up wlan2}w2: ${addr wlan2} (${wireless_link_qual_perc wlan2}% ${wireless_essid wlan2}) | ${endif}\
+${if_up wlan3}w3: ${addr wlan3} (${wireless_link_qual_perc wlan3}% ${wireless_essid wlan3}) | ${endif}\
+VPN: ${if_running vpnc}yes${else}no${endif} | \
+$acpitemp°C | \
+${loadavg 1} ${loadavg 2} ${loadavg 3} | \
+CPU: ${cpu cpu1}%${if_empty ${cpu cpu2}}$else ${cpu cpu2}%$endif${if_empty ${cpu cpu3}}$else ${cpu cpu3}%$endif${if_empty ${cpu cpu4}}$else ${cpu cpu4}%$endif${if_empty ${cpu cpu5}}$else ${cpu cpu5}%$endif${if_empty ${cpu cpu6}}$else ${cpu cpu6}%$endif${if_empty ${cpu cpu7}}$else ${cpu cpu7}%$endif${if_empty ${cpu cpu8}}$else ${cpu cpu8}%$endif | \
+Mem: $mem/$memmax ($memperc%) | \
+${time %a %Y-%m-%d %I:%M%P}
