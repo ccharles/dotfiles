@@ -29,7 +29,7 @@
 ;; X11 Emacs settings
 (if window-system
     (progn
-      (scroll-bar-mode nil)
+      (scroll-bar-mode -1)
       (setq window-columns 77)
       (setq initial-frame-alist '((width . 90) (height . 52)))
 
