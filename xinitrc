@@ -31,6 +31,7 @@ then
     sparkleshare start &
     kmix &
     $HOME/.scripts/background.sh &
+    numlockx &
     ssh-agent ck-launch-session "$DESKTOP"
 elif [[ "$DESKTOP" == "gnome" ]]
 then
