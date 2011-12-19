@@ -148,7 +148,7 @@ bar {
 for_window [class="Amarok"] floating enable
 for_window [class="Gitk"] floating enable
 for_window [class="Keepassx"] floating enable
-for_window [class="Kopate"] floating enable
+for_window [class="Kopete"] floating enable
 for_window [class="Skype"] floating enable
 
 # Lock the screen
