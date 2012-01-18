@@ -16,4 +16,4 @@ fi
 echo "$BACKGROUND" > "$LAST_BACKGROUND_FILE"
 
 
-[ -z "$BACKGROUND" ] || feh --bg-fill "$BACKGROUND"
+[ -z "$BACKGROUND" ] || feh --bg-fill --no-xinerama "$BACKGROUND"
