@@ -10,3 +10,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq cssm-indent-function 'cssm-c-style-indenter)
+
+(if (fboundp 'rainbow-mode)
+    (add-hook 'css-mode-hook
+              '(lambda ()
+                 (rainbow-mode))))
