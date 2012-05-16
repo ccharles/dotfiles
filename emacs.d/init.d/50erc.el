@@ -11,8 +11,11 @@
 
 (eval-after-load "erc"
   '(progn
-     (set 'erc-nick "cccharles")
-     (set 'erc-user-full-name "Chris Charles")
+     (require 'erc-services)
+     (erc-services-mode 1)
+
+     (setq erc-nick "cccharles")
+     (setq erc-user-full-name "Chris Charles")
 
      ;; From http://nflath.com/2009/10/bitlbee-and-emacs/
      (setq erc-log-channels-directory "~/.emacs.d/erc-logs"
@@ -21,4 +24,12 @@
            erc-log-write-after-send t
            erc-log-write-after-insert t)
 
-     (erc-log-mode 1)))
+     (erc-log-mode 1)
+
+     (setq erc-autojoin-channels-alist
+           '(("freenode.net" "##ninjamonkey" "#gwmm" "#GuelphPHP")))))
+
+(defun my-erc ()
+  "Connect to my default ERC servers."
+  (interactive)
+  (erc-tls :server "irc.freenode.net" :port 7000))
