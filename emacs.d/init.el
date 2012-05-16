@@ -26,30 +26,10 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq indent-tabs-mode nil)
 
-;; X11 Emacs settings
-(if window-system
-    (progn
-      (scroll-bar-mode -1)
-      (setq window-columns 77)
-      (setq initial-frame-alist '((width . 90) (height . 52)))
-
-      ;; Set the font based on which fonts are available
-      (let ((preferred-fonts-list (list)))
-
-            (add-to-list 'preferred-fonts-list
-                         "-lispm-fixed-medium-r-normal-*-13-*-*-*-*-*-*-*")
-            (add-to-list 'preferred-fonts-list "Envy Code R-10")
-
-		(defun my-set-font (font-list)
-		  "Set the font on the current frame to the first font found"
-
-		  ;; set-default-font is deprecated as of Emacs 23.1, but should work
-		  ;; in earlier versions
-          (if (x-list-fonts (car font-list))
-              (set-face-attribute 'default nil :font (car font-list))
-			(my-set-font (cdr font-list))))
-
-		(my-set-font preferred-fonts-list))))
+(setq default-frame-alist '((width . 90) (height . 52)
+                            (font . "Envy Code R-10")
+                            (horizontal-scroll-bars . nil)
+                            (vertical-scroll-bars . nil)))
 
 ; Copied from http://wiki.asleep.net/wiki/My_Dot_Emacs
 ;; Make executable scripts +x on save
