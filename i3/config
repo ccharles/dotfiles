@@ -153,6 +153,17 @@ for_window [class="Gitk"] floating enable
 for_window [class="Keepassx"] floating enable
 for_window [class="Kopete"] floating enable
 for_window [class="Skype"] floating enable
+for_window [class="Truecrypt"] floating enable
+for_window [class="Empathy"] floating enable
+
+# Kmail stuff
+for_window [class="Kmail" window_role="kmail-composer"] floating enable
+for_window [class="Kmail" window_role="readerwindow"] floating enable
+for_window [class="Kontact" window_role="kmail-composer"] floating enable
+for_window [class="Kontact" window_role="readerwindow"] floating enable
+
+# Dolphin
+for_window [class="Dolphin" window_role="Copying"] floating enable
 
 # Lock the screen
 bindsym $mod+l exec xlock -mode blank
