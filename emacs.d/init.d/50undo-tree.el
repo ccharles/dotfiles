@@ -9,5 +9,5 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(if (require 'undo-tree nil t)
-    (global-undo-tree-mode))
+;; (if (require 'undo-tree nil t)
+;;     (global-undo-tree-mode))
