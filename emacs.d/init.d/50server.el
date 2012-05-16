@@ -9,6 +9,6 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(if (fboundp 'gnuserv-start)
-    (gnuserv-start)
-  (server-start))
+;; (if (fboundp 'gnuserv-start)
+;;     (gnuserv-start)
+;;   (server-start))
