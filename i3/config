@@ -145,6 +145,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     status_command conky -c ~/.i3/conkyrc
+    tray_output primary
 }
 
 # Some windows should float
