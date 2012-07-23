@@ -10,7 +10,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Enable newer Org-mode from AUR
-(require 'org-install nil t)
+;; (require 'org-install nil t)
 
 (eval-after-load "org"
   '(progn
