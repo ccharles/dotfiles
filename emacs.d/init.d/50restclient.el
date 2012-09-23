@@ -1,0 +1,1 @@
+(autoload 'restclient-mode "restclient")
