@@ -24,6 +24,12 @@ ${if_up wlan0}w0: ${addr wlan0} (${wireless_link_qual_perc wlan0}% ${wireless_es
 ${if_up wlan1}w1: ${addr wlan1} (${wireless_link_qual_perc wlan1}% ${wireless_essid wlan1}) | ${endif}\
 ${if_up wlan2}w2: ${addr wlan2} (${wireless_link_qual_perc wlan2}% ${wireless_essid wlan2}) | ${endif}\
 ${if_up wlan3}w3: ${addr wlan3} (${wireless_link_qual_perc wlan3}% ${wireless_essid wlan3}) | ${endif}\
+${if_up usb0}u0: ${addr usb0} | ${endif}\
+${if_up usb1}u1: ${addr usb1} | ${endif}\
+${if_up usb2}u2: ${addr usb2} | ${endif}\
+${if_up bnep0}b0: ${addr bnep0} | ${endif}\
+${if_up bnep1}b1: ${addr bnep1} | ${endif}\
+${if_up bnep2}b2: ${addr bnep2} | ${endif}\
 VPN: ${if_running vpnc}yes${else}no${endif} | \
 $acpitemp°C | \
 ${loadavg 1} ${loadavg 2} ${loadavg 3} | \
