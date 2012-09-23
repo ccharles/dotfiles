@@ -169,5 +169,9 @@ for_window [class="Dolphin" window_role="Copying"] floating enable
 # Lock the screen
 bindsym $mod+l exec xlock -mode blank
 
+# Swap workspaces between outputs
+bindsym $mod+Shift+Control+Left move workspace to output left
+bindsym $mod+Shift+Control+Right move workspace to output right
+
 # Start nm-applet to get appropriate permissions
 exec nm-applet
