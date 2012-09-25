@@ -1,0 +1,79 @@
+;; Global Emacs settings.
+
+;; Main Emacs settings
+(setq inhibit-startup-message t)
+(global-font-lock-mode t)
+(display-time-mode t)
+(setq column-number-mode t)
+(setq transient-mark-mode t)
+(setq scroll-step 1)
+(setq-default fill-column 77)
+(setq default-tab-width 4)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(show-paren-mode)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq indent-tabs-mode nil)
+
+(setq default-frame-alist
+      (list (cons 'reverse t)           ; Use reverse video.
+                                        ; See http://lists.gnu.org/archive/
+                                        ;    html/help-gnu-emacs/2002-10/
+                                        ;    msg00040.html
+            (cons 'width 90)
+            (cons 'height 52)
+            (cons 'font "Envy Code R-10")
+            (cons 'horizontal-scroll-bars nil)
+            (cons 'vertical-scroll-bars nil)
+
+			default-frame-alist))
+
+;; Separate the custom file
+;; http://www.emacsblog.org/2008/12/06/quick-tip-detaching-the-custom-file/
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
+
+;; Consolidate backup files
+;; http://benno.id.au/blog/2008/02/26/emacs-backup-files
+(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
+
+;; Enable some features
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)
+
+;; Local lisp files live here
+(add-to-list 'load-path "~/.emacs.d/site-lisp/")
+
+;; Tabs are evil
+(setq-default indent-tabs-mode nil)
+
+;; Enable current line highlighting
+(if (fboundp 'global-hl-line-mode)
+    (global-hl-line-mode))
+
+;; From http://www.reddit.com/r/emacs/comments/d2t4q/scratch_buffers_for_emacs/c0x7a68
+;;
+;; Automatically select the appropriate major mode for buffers
+(setq default-major-mode (lambda ()
+                           (let ((buffer-file-name (or buffer-file-name (buffer-name))))
+                             (set-auto-mode))))
+
+;; Single spaces are fine between sentences
+(setq sentence-end-double-space nil)
+
+;; Window management
+(if (locate-library "windmove")
+    (progn
+      (autoload 'windmove-left "windmove")
+      (autoload 'windmove-right "windmove")
+      (autoload 'windmove-up "windmove")
+      (autoload 'windmove-down "windmove")
+
+      (global-set-key [left] 'windmove-left)
+      (global-set-key [right] 'windmove-right)
+      (global-set-key [up] 'windmove-up)
+      (global-set-key [down] 'windmove-down)))
+
+(winner-mode t)
