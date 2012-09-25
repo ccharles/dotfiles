@@ -77,3 +77,7 @@
       (global-set-key [down] 'windmove-down)))
 
 (winner-mode t)
+
+;; Buffer naming
+(if (require 'uniquify nil t)
+    (setq uniquify-buffer-name-style 'forward))
