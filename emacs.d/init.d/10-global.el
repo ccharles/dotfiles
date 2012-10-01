@@ -22,7 +22,6 @@
                                         ;    msg00040.html
             (cons 'width 90)
             (cons 'height 52)
-            (cons 'font "Envy Code R-10")
             (cons 'horizontal-scroll-bars nil)
             (cons 'vertical-scroll-bars nil)
 
