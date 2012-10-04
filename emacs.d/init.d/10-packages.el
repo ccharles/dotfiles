@@ -17,7 +17,7 @@
   (let ((value)
         (my-global-packages
          '(ace-jump-mode edit-server expand-region fill-column-indicator
-                         js2-mode magit multiple-cursors)))
+                         magit multiple-cursors)))
 
     (dolist (value my-global-packages)
       (unless (package-installed-p value)
