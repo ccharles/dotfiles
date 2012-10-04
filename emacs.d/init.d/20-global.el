@@ -102,3 +102,13 @@
     (progn
       (autoload 'magit-status "magit")
       (global-set-key (kbd "C-x g") 'magit-status)))
+
+(if (locate-library "multiple-cursors")
+    (progn
+      (autoload 'mc/mark-next-like-this "multiple-cursors")
+      (autoload 'mc/mark-previous-like-this "multiple-cursors")
+      (autoload 'mc/mark-all-like-this "multiple-cursors")
+
+      (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+      (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+      (global-set-key (kbd "C-*") 'mc/mark-all-like-this)))
