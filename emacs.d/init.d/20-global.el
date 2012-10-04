@@ -80,3 +80,25 @@
 ;; Buffer naming
 (if (require 'uniquify nil t)
     (setq uniquify-buffer-name-style 'forward))
+
+;; A bunch of plugins that I always want.
+
+(if (locate-library "ace-jump-mode")
+    (progn
+      (autoload 'ace-jump-mode "ace-jump-mode")
+      (define-key global-map (kbd "<insert>") 'ace-jump-mode)))
+
+(if (require 'edit-server nil t)
+	(progn
+	  (setq edit-server-new-frame nil)
+	  (edit-server-start)))
+
+(if (locate-library "expand-region")
+    (progn
+      (autoload 'er/expand-region "expand-region")
+      (global-set-key (kbd "C-=") 'er/expand-region)))
+
+(if (locate-library "magit")
+    (progn
+      (autoload 'magit-status "magit")
+      (global-set-key (kbd "C-x g") 'magit-status)))
