@@ -81,6 +81,9 @@
 (if (require 'uniquify nil t)
     (setq uniquify-buffer-name-style 'forward))
 
+;; Show empty linesin the fringe
+(setq default-indicate-empty-lines t)
+
 ;; A bunch of plugins that I always want.
 
 (if (locate-library "ace-jump-mode")
