@@ -77,9 +77,11 @@
 
 (winner-mode t)
 
-;; Buffer naming
+;; Buffer management
 (if (require 'uniquify nil t)
     (setq uniquify-buffer-name-style 'forward))
+
+(ido-mode 1)
 
 ;; Show empty linesin the fringe
 (setq default-indicate-empty-lines t)
