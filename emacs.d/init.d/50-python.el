@@ -1,7 +1,4 @@
-;; (add-hook 'python-mode-hook
-;;           (lambda ()
-;;             (if (locate-library "smart-operator")
-;;                 (smart-operator-mode t))))
+;; Configuration for Python
 
 (eval-after-load "python"
   '(progn
