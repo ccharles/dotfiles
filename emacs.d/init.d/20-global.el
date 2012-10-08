@@ -100,6 +100,17 @@
       (autoload 'ace-jump-mode "ace-jump-mode")
       (define-key global-map (kbd "<insert>") 'ace-jump-mode)))
 
+(if (require 'autopair nil t)
+    (progn
+      ;; Enable autopair globally if it's available.
+      (autopair-global-mode 1)
+
+      ;; Don't want autopair in js2-mode...
+      (add-hook 'js2-mode-hook '(lambda () (setq autopair-dont-activate t)))
+
+      ;; ...or any term modes.
+      (add-hook 'term-mode-hook '(lambda () (setq autopair-dont-activate t)))))
+
 (if (require 'edit-server nil t)
 	(progn
 	  (setq edit-server-new-frame nil)
