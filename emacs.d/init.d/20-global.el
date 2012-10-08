@@ -137,6 +137,23 @@
       (autoload 'ace-jump-mode "ace-jump-mode")
       (define-key global-map (kbd "<insert>") 'ace-jump-mode)))
 
+(if (locate-library "ack-and-a-half")
+    ;; TODO: Leverage ack-and-a-half code to determine whether the binaries
+    ;; are available
+    (if (or (executable-find "ack")
+            (executable-find "ack-grep"))
+        (progn
+          ;; TODO: Get this working with autoload... Having a bit of trouble
+          ;; with it. I don't want to bind keys, but simply to make, e.g.,
+          ;; 'ack-and-a-half executable via M-x.
+          (require 'ack-and-a-half)
+
+          (defalias 'ack 'ack-and-a-half)
+          (defalias 'ack-same 'ack-and-a-half-same)
+          (defalias 'ack-find-file 'ack-and-a-half-find-file)
+          (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same))
+      (message "Could not find ack binary")))
+
 (if (require 'autopair nil t)
     (progn
       ;; Enable autopair globally if it's available.
