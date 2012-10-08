@@ -165,6 +165,12 @@
       ;; ...or any term modes.
       (add-hook 'term-mode-hook '(lambda () (setq autopair-dont-activate t)))))
 
+(if (locate-library "drag-stuff")
+    (progn
+      (drag-stuff-global-mode t)
+      (add-hook 'org-mode-hook
+                (lambda () (drag-stuff-mode -1)))))
+
 (if (require 'edit-server nil t)
 	(progn
 	  (setq edit-server-new-frame nil)
@@ -189,9 +195,3 @@
       (global-set-key (kbd "C->") 'mc/mark-next-like-this)
       (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
       (global-set-key (kbd "C-*") 'mc/mark-all-like-this)))
-
-(if (locate-library "drag-stuff")
-    (progn
-      (drag-stuff-global-mode t)
-      (add-hook 'org-mode-hook
-                (lambda () (drag-stuff-mode -1)))))
