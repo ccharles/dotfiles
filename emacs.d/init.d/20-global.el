@@ -15,6 +15,13 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq indent-tabs-mode nil)
 
+;; Avoid the minibuffer read-only message
+;; http://www.reddit.com/r/emacs/comments/yn3u3/
+;;     fixing_text_read_only_when_cursor_accidentally/
+(setq minibuffer-prompt-properties
+      (plist-put minibuffer-prompt-properties
+                 'point-entered 'minibuffer-avoid-prompt))
+
 (setq default-frame-alist
       (list (cons 'reverse t)           ; Use reverse video.
                                         ; See http://lists.gnu.org/archive/
