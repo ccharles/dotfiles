@@ -126,4 +126,7 @@
       (global-set-key (kbd "C-*") 'mc/mark-all-like-this)))
 
 (if (locate-library "drag-stuff")
-    (drag-stuff-global-mode t))
+    (progn
+      (drag-stuff-global-mode t)
+      (add-hook 'org-mode-hook
+                (lambda () (drag-stuff-mode -1)))))
