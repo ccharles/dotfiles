@@ -23,3 +23,5 @@
     (dolist (value my-global-packages)
       (unless (package-installed-p value)
         (package-install value)))))
+
+(install-base-packages)
