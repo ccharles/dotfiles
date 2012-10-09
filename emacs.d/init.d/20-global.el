@@ -39,6 +39,9 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
+;; Have to load the theme after dealing with custom-file
+(load-theme 'cyberpunk)
+
 ;; Consolidate backup files
 ;; http://benno.id.au/blog/2008/02/26/emacs-backup-files
 (setq backup-directory-alist '(("" . "~/.emacs.d/backup")))

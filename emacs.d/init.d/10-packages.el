@@ -16,8 +16,8 @@
   ;; TODO: What about updating the local database?
   (let ((value)
         (my-global-packages
-         '(ace-jump-mode ack-and-a-alf autopair drag-stuff edit-server
-                         expand-region fill-column-indicator magit
+         '(ace-jump-mode ack-and-a-half autopair cyberpunk-theme drag-stuff
+                         edit-server expand-region fill-column-indicator magit
                          multiple-cursors)))
 
     (dolist (value my-global-packages)
