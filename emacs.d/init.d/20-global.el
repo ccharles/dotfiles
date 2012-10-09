@@ -93,6 +93,8 @@
 
 (ido-mode 1)
 
+(which-function-mode 1)
+
 ;; Show empty linesin the fringe
 (setq default-indicate-empty-lines t)
 
