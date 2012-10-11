@@ -18,7 +18,8 @@
         (my-global-packages
          '(ace-jump-mode ack-and-a-half auto-complete autopair cyberpunk-theme
                          drag-stuff edit-server expand-region
-                         fill-column-indicator magit multiple-cursors)))
+                         fill-column-indicator magit multiple-cursors
+                         yasnippet)))
 
     (dolist (value my-global-packages)
       (unless (package-installed-p value)

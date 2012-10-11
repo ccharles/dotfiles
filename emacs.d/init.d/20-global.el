@@ -162,7 +162,8 @@
 (if (require 'auto-complete-config)
     (progn
       (setq-default ac-sources '(ac-source-words-in-same-mode-buffers
-                                 ac-source-ropemacs ac-source-css-property))
+                                 ac-source-ropemacs ac-source-css-property
+                                 ac-source-yasnippet))
 
       (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
       (add-hook 'css-mode-hook 'ac-css-mode-setup)
@@ -212,3 +213,6 @@
       (global-set-key (kbd "C->") 'mc/mark-next-like-this)
       (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
       (global-set-key (kbd "C-*") 'mc/mark-all-like-this)))
+
+(if (require 'yasnippet nil t)
+    (yas-global-mode 1))
