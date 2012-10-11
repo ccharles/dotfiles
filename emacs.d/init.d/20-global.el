@@ -163,7 +163,8 @@
     (progn
       (setq-default ac-sources '(ac-source-words-in-same-mode-buffers
                                  ac-source-ropemacs ac-source-css-property
-                                 ac-source-yasnippet))
+                                 ac-source-yasnippet ac-source-dictionary
+                                 ac-source-gtags))
 
       (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
       (add-hook 'css-mode-hook 'ac-css-mode-setup)
