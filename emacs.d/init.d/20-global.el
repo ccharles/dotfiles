@@ -216,4 +216,7 @@
       (global-set-key (kbd "C-*") 'mc/mark-all-like-this)))
 
 (if (require 'yasnippet nil t)
-    (yas-global-mode 1))
+    (let ((local-snippets-dir "~/.emacs.d/snippets/"))
+      (if (file-readable-p local-snippets-dir)
+          (yas-load-directory local-snippets-dir))
+      (yas-global-mode 1)))
