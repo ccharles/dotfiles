@@ -134,6 +134,10 @@
              '(face tabs spaces trailing space-before-tab newline indentation
                     empty space-after-tab space-mark tab-mark newline-mark))))
 
+;; Use the user's default browser to open URLs
+(setq-default browse-url-generic-program "xdg-open")
+(setq-default browse-url-browser-function 'browse-url-generic)
+
 
 ;; A bunch of plugins that I always want.
 
