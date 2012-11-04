@@ -19,7 +19,6 @@
     (concat
      "*\n"
      params
-     "\n"
      "")))}*/
 ${1:$$(yas-choose-value '("protected " "public " "private " ""))}function ${2:myFunc}($3)
 {
