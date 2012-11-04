@@ -12,7 +12,7 @@
                        (if (match-string 1 param)
                            (concat (match-string 1 param) " "))
                        (match-string 2 param))))
-         (split-string text ",\\s *")
+         (split-string text ",")
          "\n")))
   (if (not (string= text ""))
       (concat
