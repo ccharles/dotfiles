@@ -1,0 +1,16 @@
+# -*- mode: snippet; -*-
+# key: class
+# --
+/**
+ * $6
+ */
+class ${1:`
+(if (buffer-file-name)
+    (car (split-string
+          (car (last (split-string (buffer-file-name) "/")))
+          "\\(?:\\.inc\\)?\\.php"))
+  "MyClass")
+`}${2: extends ${3:stdClass}}${4: implements ${5:SomeInterface}}
+{
+    $0
+}

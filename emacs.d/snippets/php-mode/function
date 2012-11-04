@@ -1,0 +1,23 @@
+# -*- mode: snippet; -*-
+# key: function
+# --
+/**
+ * $4
+${3:$(let* ((leader (concat (make-string (current-column) 32) "*"))
+       (params
+        (mapconcat
+         (lambda (param)
+           (concat leader " @param " param))
+         (split-string text ",\\s *")
+         "\n")))
+  (if (not (string= text ""))
+      (concat
+       leader
+       "\n"
+       params)
+    ""))}
+ */
+${1:$$(yas-choose-value '("protected " "public " "private " ""))}function ${2:myFunc}($3)
+{
+    $0
+}
