@@ -3,25 +3,24 @@
 # --
 /**
  * $4
- ${3:$(let* ((leader (make-string (current-column) ?\ ))
-       (params
-        (mapconcat
-         (lambda (param)
-           (if (string-match "\\\\(\\\\w+\\\\)?\\\\s *\\\\(&?\\\\$\\\\w+\\\\)" param)
-               (concat leader "* @param "
-                       (if (match-string 1 param)
-                           (concat (match-string 1 param) " "))
-                       (match-string 2 param))))
-         (split-string text ",")
-         "\n")))
-  (if (not (string= text ""))
-      (concat
-       leader
-       "*\n"
-       params
-       "\n"
-       leader
-    "")))}*/
+ ${3:$(let ((params
+       (mapconcat
+        (lambda (param)
+          (if (string-match "\\\\(\\\\w+\\\\)?\\\\s *\\\\(&?\\\\$\\\\w*\\\\)" param)
+              (concat "* @param "
+                      (if (match-string 1 param)
+                          (concat (match-string 1 param) " "))
+                      (match-string 2 param)
+                      "\n")))
+        (split-string text ",")
+        "")))
+  (if (string= params "")
+      nil
+    (concat
+     "*\n"
+     params
+     "\n"
+     "")))}*/
 ${1:$$(yas-choose-value '("protected " "public " "private " ""))}function ${2:myFunc}($3)
 {
     $0
