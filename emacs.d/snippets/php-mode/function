@@ -8,7 +8,10 @@
         (mapconcat
          (lambda (param)
            (if (string-match "\\\\(\\\\w+\\\\)?\\\\s *\\\\(&?\\\\$\\\\w+\\\\)" param)
-               (concat leader "* @param " (match-string 2 param))))
+               (concat leader "* @param "
+                       (if (match-string 1 param)
+                           (concat (match-string 1 param) " "))
+                       (match-string 2 param))))
          (split-string text ",\\s *")
          "\n")))
   (if (not (string= text ""))
