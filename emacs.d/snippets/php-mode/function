@@ -1,0 +1,30 @@
+# -*- mode: snippet; -*-
+# key: function
+# --
+/**
+ * $4
+ ${3:$
+(let* ((indent (make-string (current-column) ?\ ))
+       (params
+        (mapconcat
+         (lambda (param)
+           (if (string-match "\\\\(\\\\w+\\\\)?\\\\s *\\\\(&?\\\\$\\\\w*\\\\)" param)
+               (concat indent
+                       "* @param "
+                       (if (match-string 1 param)
+                           (concat (match-string 1 param) " "))
+                       (match-string 2 param)
+                       "\n")))
+         (split-string text ",")
+         "")))
+  (if (string= params "")
+      nil
+    (concat
+     "*\n"
+     params
+     indent)))
+}*/
+${1:$$(yas-choose-value '("protected " "public " "private " ""))}function ${2:myFunc}($3)
+{
+    $0
+}
