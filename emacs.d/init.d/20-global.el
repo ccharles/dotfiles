@@ -222,3 +222,24 @@
       (if (file-readable-p local-snippets-dir)
           (yas-load-directory local-snippets-dir))
       (yas-global-mode 1)))
+
+(setq yas-wrap-around-region t)
+
+;; Taken from
+;;     http://stackoverflow.com/a/10366711
+(defun yas-insert-by-name (name)
+  (flet ((dummy-prompt
+          (prompt choices &optional display-fn)
+          (declare (ignore prompt))
+          (or (find name choices :key display-fn :test #'string=)
+              (throw 'notfound nil))))
+    (let ((yas/prompt-functions '(dummy-prompt)))
+      (catch 'notfound
+        (yas/insert-snippet t)))))
+
+(defun yas-insert-by-prompted-name ()
+  (interactive)
+  (let ((snippet-name (read-from-minibuffer "Snippet? ")))
+    (yas-insert-by-name snippet-name)))
+
+(global-set-key (kbd "C-x x") 'yas-insert-by-prompted-name)
