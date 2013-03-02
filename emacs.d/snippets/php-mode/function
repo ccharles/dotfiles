@@ -2,8 +2,8 @@
 # key: function
 # --
 /**
- * $4
- ${3:$
+ * $5
+ ${4:$
 (let* ((indent (make-string (current-column) ?\ ))
        (params
         (mapconcat
@@ -23,8 +23,10 @@
      "*\n"
      params
      indent)))
+}${6:*
+ * @return $7
 }*/
-${1:$$(yas-choose-value '("protected " "public " "private " ""))}function ${2:myFunc}($3)
+${1:final }${2:public }function ${3:myFunc}($4)
 {
     $0
 }

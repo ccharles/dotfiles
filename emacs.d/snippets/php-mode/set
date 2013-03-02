@@ -1,0 +1,14 @@
+# -*- mode: snippet; -*-
+# key: set
+# --
+/**
+ * $2
+ *
+ * @return ${3:MyClass}
+ */
+public function set${1:$(upcase-initials text)}($new${1:$(upcase-initials text)})
+{
+    $this->${1:foo} = $new${1:$(upcase-initials text)};
+
+    return $this;
+}

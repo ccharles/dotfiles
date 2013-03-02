@@ -1,0 +1,9 @@
+# -*- mode: snippet; -*-
+# key: anon
+# --
+${1:${2:$foo} = }function ($3)${4: use ($5)} {
+    $0
+}${1:$
+(if (not (string= "" text))
+    (format ";"))
+}
