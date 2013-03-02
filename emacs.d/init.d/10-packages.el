@@ -11,7 +11,7 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (defun install-base-packages ()
-  (package-refresh-contents)
+  ;; (package-refresh-contents)
 
   ;; TODO: What about updating the local database?
   (let ((value)
