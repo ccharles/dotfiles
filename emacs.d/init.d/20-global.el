@@ -91,7 +91,10 @@
 (if (require 'uniquify nil t)
     (setq uniquify-buffer-name-style 'forward))
 
+;; Enable ido
 (ido-mode 1)
+(ido-everywhere)
+(setq ido-enable-flex-matching t)
 
 (which-function-mode 1)
 
